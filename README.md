@@ -21,7 +21,15 @@ DevClean provides a comprehensive, automated disk optimization platform with:
 - **Daily scheduled scans** at 9 AM UTC
 - **Interactive web dashboard** for visual insights
 
+![1772542147585](https://github.com/user-attachments/assets/47ffabb2-3b6c-49d0-8bf7-01bf16fea69f)
+![1772542147070](https://github.com/user-attachments/assets/acc5264c-5433-4e13-90fd-66c400fafb09)
+![1772542147132](https://github.com/user-attachments/assets/b113e5ed-9bdc-43bf-92cf-acb5c4051c05)
+![1772542147362](https://github.com/user-attachments/assets/84e112c1-874b-4916-a821-eda3bbdeb9fa)
+![1772542147678](https://github.com/user-attachments/assets/313efde1-aa21-42f6-8f3e-ba274e76b2f7)
+![1772542147642](https://github.com/user-attachments/assets/e9c6ff3c-1def-43e2-b6b6-95cc2cb8d322)
+
 ## Architecture
+<img width="480" height="320" alt="1772542295589" src="https://github.com/user-attachments/assets/2f56fe5b-8b7b-4319-88f0-9ab1c0943044" />
 
 ### Multi-Agent System (OpenClaw Principles)
 DevClean uses a sophisticated multi-agent architecture where each agent specializes in one domain:
