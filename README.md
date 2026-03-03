@@ -108,7 +108,7 @@ OpenRouter integration provides:
 - Cost-effective using GPT-4o-mini
 - Fallback mode when API unavailable
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### Agent Orchestration
 ```python
@@ -265,8 +265,7 @@ The project showcases:
 - **Automation** for proactive maintenance
 
 
----
 
-**Built for OpenClaw Hackathon 2026** 🎉
+**Built for OpenClaw Hackathon 2026** 
 **Category:** Developer Tools / System Utilities
 **Technologies:** Python, FastAPI, React, TypeScript, OpenRouter, Telegram Bot API, OpenClaw
