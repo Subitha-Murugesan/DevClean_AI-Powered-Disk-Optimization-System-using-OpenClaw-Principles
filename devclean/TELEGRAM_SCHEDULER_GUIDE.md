@@ -1,13 +1,13 @@
-# 📱 DevClean Telegram & Scheduler Setup Guide
+ # DevClean Telegram & Scheduler Setup Guide
 
-## ✅ What's Enabled
+## What's Enabled
 
 Your DevClean now has:
-- ✅ **Daily 9 AM Scheduled Analysis** - Runs automatically every morning at 9:00 UTC
-- ✅ **Telegram Notifications** - Results sent to your Telegram chat  
-- ✅ **Manual Analysis + Notification** - Clicking "Analyze" also sends results to Telegram
+- Daily 9 AM Scheduled Analysis - Runs automatically every morning at 9:00 UTC
+- Telegram Notifications - Results sent to your Telegram chat
+- Manual Analysis + Notification - Clicking "Analyze" also sends results to Telegram
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables (in `.env`)
 ```bash
@@ -29,17 +29,17 @@ curl http://localhost:8000/health | jq .
 }
 ```
 
-## 📅 Daily Scheduler
+## Daily Scheduler
 
 ### What Runs Daily at 9 AM
-1. **DiskAnalyzerAgent** - Scans filesystem
-2. **DockerAnalyzerAgent** - Checks Docker images/volumes
-3. **PackageCacheAgent** - Finds npm, pip caches
-4. **OptimizationAgent** - Generates AI recommendations
-5. **Telegram Notifier** - Sends report to your chat
+1. DiskAnalyzerAgent - Scans filesystem
+2. DockerAnalyzerAgent - Checks Docker images/volumes
+3. PackageCacheAgent - Finds npm, pip caches
+4. OptimizationAgent - Generates AI recommendations
+5. Telegram Notifier - Sends report to your chat
 
 ### Customize Schedule
-Edit [telegram_service.py](telegram_service.py) to change timing:
+Edit `telegram_service.py` to change timing:
 
 ```python
 # Change from 09:00 UTC to 08:00 UTC
@@ -65,7 +65,7 @@ self.scheduler.add_job(
 timezone=pytz.timezone('US/Eastern')
 ```
 
-## 📨 Telegram Notifications
+## Telegram Notifications
 
 ### Manual Analysis Notification
 When you click "Analyze Disk" in the frontend:
@@ -77,36 +77,37 @@ When you click "Analyze Disk" in the frontend:
 At 9 AM daily:
 - Automatic analysis runs
 - Full report sent to Telegram
-- Marked as "📅 Scheduled Analysis"
+- Marked as "Scheduled Analysis"
 
 ### Message Format
 ```
-📅 Scheduled Analysis
+Scheduled Analysis
 Time: 2026-02-28 09:00:00
 
-📊 Analysis Summary:
+Analysis Summary:
 
-💾 Disk Usage:
+Disk Usage:
    • Total: 45.23 GB
    • File types: 512
    • Folders: 1024
 
-🐳 Docker:
+Docker:
    • Unused images: 5
    • Dangling volumes: 2
 
-📦 Package Caches:
+Package Caches:
    • npm: 523.4MB, pip: 234.5MB
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 AI Recommendations:
+
+AI Recommendations:
 
 [AI suggestions preview...]
 
 See frontend for full recommendations
 ```
 
-## 🧪 Test Notifications
+## Test Notifications
 
 ### Test 1: Manual Analysis
 ```bash
@@ -125,7 +126,7 @@ curl http://localhost:8000/status/test
 curl http://localhost:8000/health | jq '.scheduler_running'
 ```
 
-## 📋 Endpoints
+## Endpoints
 
 ### Analysis & Scheduling
 | Endpoint | Method | Purpose |
@@ -142,7 +143,7 @@ curl http://localhost:8000/health | jq '.scheduler_running'
 | `/cache-analysis` | Package caches |
 | `/recommendations` | AI suggestions only |
 
-## ⚙️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -159,14 +160,14 @@ curl http://localhost:8000/health | jq '.scheduler_running'
 └─────────────────────────────────────────────┘
 ```
 
-## 🔐 Security Notes
+## Security Notes
 
 - Bot token stored in `.env` (not in code)
 - Chat ID stored in `.env` (not in code)
 - Messages sent via HTTPS to Telegram API
 - No sensitive data logged
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Telegram Not Sending?
 ```bash
@@ -199,48 +200,48 @@ curl http://localhost:8000/health | jq '.scheduler_running'
 - For US/Eastern, that's 4 AM EST / 5 AM EDT
 - Adjust `hour` parameter in scheduler to match your timezone
 
-## 📊 Example Workflow
+## Example Workflow
 
-**Morning at 9 AM:**
+Morning at 9 AM:
 1. Scheduler triggers
 2. OrchestratorAgent runs all analysis agents
 3. Analysis results collected
 4. AI recommendations generated
 5. Telegram message formatted
 6. Telegram API called
-7. Message appears in your chat ✅
+7. Message appears in your chat
 
-**When you click "Analyze":**
+When you click "Analyze":
 1. Frontend calls `/analyze`
 2. Backend runs full analysis
 3. Telegram notification sent
 4. Results displayed in frontend
 
-## 🚀 Next Steps
+## Next Steps
 
-1. **Verify Setup Works**
-   ```bash
-   curl http://localhost:8000/analyze
-   # Check Telegram for notification
-   ```
+1. Verify Setup Works
+```bash
+curl http://localhost:8000/analyze
+# Check Telegram for notification
+```
 
-2. **Check Scheduled Job**
-   ```bash
-   curl http://localhost:8000/health
-   # Verify scheduler_running: true
-   ```
+2. Check Scheduled Job
+```bash
+curl http://localhost:8000/health
+# Verify scheduler_running: true
+```
 
-3. **Customize Schedule** (optional)
-   - Edit hour/minute in telegram_service.py
-   - Restart backend
+3. Customize Schedule (optional)
+- Edit hour/minute in telegram_service.py
+- Restart backend
 
-4. **Monitor Logs**
-   ```bash
-   # Backend logs show all activity
-   grep "Telegram\|scheduler" backend.log
-   ```
+4. Monitor Logs
+```bash
+# Backend logs show all activity
+grep "Telegram\|scheduler" backend.log
+```
 
-## 📚 Files Modified
+## Files Modified
 
 - [backend.py](backend.py) - Added Telegram integration & scheduler startup
 - [telegram_service.py](telegram_service.py) - New: Telegram and scheduler service
@@ -251,6 +252,6 @@ curl http://localhost:8000/health | jq '.scheduler_running'
 
 **Backend running on:** http://localhost:8000  
 **Frontend running on:** http://localhost:5173  
-**Telegram notifications:** ✅ Active
+**Telegram notifications:** Active
 
-Try clicking "Analyze Disk" now to get your first Telegram notification! 🎉
+Try clicking "Analyze Disk" now to get your first Telegram notification!

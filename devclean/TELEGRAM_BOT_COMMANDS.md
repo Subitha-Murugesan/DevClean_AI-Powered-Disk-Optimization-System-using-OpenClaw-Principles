@@ -1,26 +1,26 @@
-# 🤖 DevClean Telegram Bot Commands
+ # DevClean Telegram Bot Commands
 
-## ✨ New Feature: Control DevClean via Telegram!
+## New Feature: Control DevClean via Telegram
 
-Your DevClean bot is now listening for commands in Telegram. You can run analysis and get results directly from chat!
+Your DevClean bot is now listening for commands in Telegram. You can run analysis and get results directly from chat.
 
-## 📋 Available Commands
+## Available Commands
 
 ### `/analyze`
 **Run disk analysis immediately and get results in Telegram**
 
 ```
 User: /analyze
-Bot: 🔍 Analyzing...
+Bot: Analyzing...
      [waits 15-30 seconds]
-     ✅ Analysis Complete
+     Analysis Complete
      
-     📊 Results:
-     💾 Disk Usage: 45.23 GB
-     🐳 Docker: 5 unused images
-     📦 Caches: npm 523MB, pip 234MB
+     Results:
+     Disk Usage: 45.23 GB
+     Docker: 5 unused images
+     Caches: npm 523MB, pip 234MB
      
-     💡 Recommendations: [AI suggestions...]
+     Recommendations: [AI suggestions...]
 ```
 
 ### `/help` or `/start`
@@ -28,17 +28,17 @@ Bot: 🔍 Analyzing...
 
 ```
 User: /help
-Bot: 🤖 DevClean Bot Commands
+Bot: DevClean Bot Commands
      
-     📊 /analyze - Run disk analysis now
-     📈 /status - Show system status
-     ℹ️ /help - Show this help message
+     /analyze - Run disk analysis now
+     /status - Show system status
+     /help - Show this help message
      
      Features:
-     ✅ Disk usage analysis
-     ✅ Docker resources check
-     ✅ Package cache detection
-     ✅ AI-powered recommendations
+     Disk usage analysis
+     Docker resources check
+     Package cache detection
+     AI-powered recommendations
      
      Daily: Automatic analysis at 09:00 UTC
      Try /analyze to get started!
@@ -49,31 +49,26 @@ Bot: 🤖 DevClean Bot Commands
 
 ```
 User: /status
-Bot: 📊 DevClean Status
+Bot: DevClean Status
      
-     ✅ Service: Online
-     ✅ Bot: Active
-     ✅ Scheduler: Running
-     📅 Next daily: 09:00 UTC
+     Service: Online
+     Bot: Active
+     Scheduler: Running
+     Next daily: 09:00 UTC
      
      Use /analyze to start analysis
 ```
 
-## 🚀 How It Works
+## How It Works
 
 ### Command Flow
 ```
 You send: /analyze
-           ↓
-Bot receives and processes
-           ↓
-Starts all agents (Disk, Docker, Cache)
-           ↓
-Runs AI optimization
-           ↓
-Sends formatted results to Telegram
-           ↓
-You receive: Analysis + Recommendations
+           -> Bot receives and processes
+           -> Starts all agents (Disk, Docker, Cache)
+           -> Runs AI optimization
+           -> Sends formatted results to Telegram
+           -> You receive: Analysis + Recommendations
 ```
 
 ### Step-by-Step Example
@@ -84,7 +79,7 @@ You receive: Analysis + Recommendations
 - Type `/analyze` and send
 
 **2. Bot Responds**
-- Shows "🔍 Analyzing..." message
+- Shows "Analyzing..." message
 - Starts analysis
 
 **3. Get Results**
@@ -93,71 +88,71 @@ You receive: Analysis + Recommendations
 - Package caches
 - AI recommendations
 
-## 📱 Three Ways to Analyze
+## Three Ways to Analyze
 
-### 1. **Telegram Commands** (New! ✨)
+### 1. Telegram Commands
 ```
 Send: /analyze
 Result: Gets analysis in Telegram instantly
 ```
 
-### 2. **Web Frontend** (Existing)
+### 2. Web Frontend (Existing)
 ```
 Visit: http://localhost:5173
 Click: "Analyze Disk" button
 Result: Shows in web + sends to Telegram
 ```
 
-### 3. **API Endpoint** (Existing)
+### 3. API Endpoint (Existing)
 ```
 curl http://localhost:8000/analyze
 Result: Returns JSON + sends to Telegram
 ```
 
-### 4. **Daily Automatic** (Existing)
+### 4. Daily Automatic (Existing)
 ```
 Every day at 09:00 UTC
 Result: Automatic analysis sent to Telegram
 ```
 
-## 🔧 Backend Requirements
+## Backend Requirements
 
 The backend includes:
 
 - **TelegramBot class** - Listens for commands
 - **Bot polling** - Checks for messages continuously
 - **Command handlers** - `/analyze`, `/help`, `/status`
-- **Integration** - Runs orchestra through command
+- **Integration** - Runs orchestrator through command
 
-## 📊 What Bot Sends
+## What Bot Sends
 
 ### Analysis Report Format
 ```
-✅ Analysis Complete
+Analysis Complete
 Time: 2026-02-28 16:45:30
 
-📊 Results:
+Results:
 
-💾 Disk Usage:
+Disk Usage:
    • Total: 45.23 GB
    • File types: 512
    • Folders: 1024
 
-🐳 Docker:
+Docker:
    • Unused images: 5
    • Dangling volumes: 2
 
-📦 Package Caches:
+Package Caches:
    • npm: 523.4MB, pip: 234.5MB
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-💡 Recommendations:
+Recommendations:
 
 [AI suggestions for cleanup...]
 ```
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Step 1: Verify Bot is Running
 ```bash
@@ -184,16 +179,16 @@ Wait: 15-30 seconds
 Result: Get full analysis report
 ```
 
-## 🔄 Bot Polling Details
+## Bot Polling Details
 
 The bot:
-- ✅ Runs in **background thread** (non-blocking)
-- ✅ Checks for messages every 1-30 seconds
-- ✅ Processes commands instantly
-- ✅ Sends formatted responses
-- ✅ Handles errors gracefully
+- Runs in background thread (non-blocking)
+- Checks for messages every 1-30 seconds
+- Processes commands instantly
+- Sends formatted responses
+- Handles errors gracefully
 
-## 📋 Command Processing
+## Command Processing
 
 Each command:
 1. **Received** - Bot polling catches it
@@ -203,7 +198,7 @@ Each command:
 5. **Formatted** - Prepares response
 6. **Sent** - Message back to Telegram
 
-## 🛑 Stop Bot
+## Stop Bot
 
 The bot automatically stops when backend shuts down:
 ```bash
@@ -214,7 +209,7 @@ pkill -f "uvicorn backend"
 # Telegram messages won't be processed until backend restarts
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Bot not responding?
 1. Check if backend is running: `curl http://localhost:8000/health`
@@ -231,7 +226,7 @@ pkill -f "uvicorn backend"
 - Docker checks take 3-10 seconds
 - AI analysis depends on API speed
 
-## 📚 Available Commands Reference
+## Available Commands Reference
 
 | Command | Purpose | Example |
 |---------|---------|---------|
@@ -240,7 +235,7 @@ pkill -f "uvicorn backend"
 | `/start` | Start/help | Same as /help |
 | `/status` | System status | Check if bot is working |
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Test bot** - Send `/analyze` in Telegram
 2. **Check results** - Verify message arrives
@@ -249,8 +244,8 @@ pkill -f "uvicorn backend"
 
 ---
 
-**Telegram Bot Status:** ✅ Active  
+**Telegram Bot Status:** Active  
 **Commands Enabled:** /analyze, /help, /start, /status  
 **Polling:** Active and listening for messages  
 
-**Try `/analyze` in Telegram now!** 🚀
+Try `/analyze` in Telegram now!

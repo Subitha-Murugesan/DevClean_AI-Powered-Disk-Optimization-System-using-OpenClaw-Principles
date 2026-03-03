@@ -1,31 +1,31 @@
-# ✅ DevClean Telegram & Scheduler - Complete Setup
+ # DevClean Telegram & Scheduler - Complete Setup
 
-## 🎉 Status: **LIVE & OPERATIONAL**
+## Status: **LIVE & OPERATIONAL**
 
 Your DevClean now includes:
 
-### ✅ Daily 9 AM Analysis
+### Daily 9 AM Analysis
 - **Runs automatically** every morning at 9:00 AM UTC
 - **Multi-agent analysis** of disk, Docker, and caches
 - **AI recommendations** generated using OpenRouter
 - **Results sent to Telegram** automatically
 
-### ✅ Click-to-Notify Analysis  
+### Click-to-Notify Analysis  
 - Click "Analyze Disk" in frontend
 - Analysis runs immediately
 - Results sent to Telegram chat
 - Appears in both frontend and Telegram
 
-### ✅ Verified Working
+### Verified Working
 ```
 Service Status:
-✓ Health: healthy
-✓ Telegram: configured
-✓ Scheduler: running ✨
-✓ API Key: configured
+Health: healthy
+Telegram: configured
+Scheduler: running
+API Key: configured
 ```
 
-## 📋 What's New
+## What's New
 
 ### New Files Created
 1. **[telegram_service.py](telegram_service.py)** - Telegram integration & scheduler
@@ -40,7 +40,7 @@ Service Status:
 - `apscheduler>=3.10.0` - Task scheduling
 - `pytz>=2024.1` - Timezone support
 
-## 🚀 How It Works
+## How It Works
 
 ### Daily Schedule
 ```
@@ -56,7 +56,7 @@ Service Status:
          ↓
    TelegramNotifier sends report
          ↓
-Message appears in your Telegram chat ✅
+Message appears in your Telegram chat
 ```
 
 ### Manual Analysis
@@ -69,15 +69,15 @@ Generates recommendations
          ↓
 TelegramNotifier sends report
          ↓
-Message appears in Telegram ✅
-Results shown in frontend ✅
+Message appears in Telegram
+Results shown in frontend
 ```
 
-## 🔧 Configuration (Already Done ✅)
+## Configuration (Already Done)
 
 ### Environment Variables (.env)
 ```bash
-# Already configured ✅
+# Already configured
 TELEGRAM_BOT_TOKEN=...
 TELEGRAM_CHAT_ID=...
 OPENROUTER_API_KEY=...
@@ -104,7 +104,7 @@ self.scheduler.add_job(
 - `'Europe/London'` = 9 AM GMT (+0) / BST (+1)
 - `'Asia/Tokyo'` = 9 AM JST (+9)
 
-## 📱 Testing
+## Testing
 
 ### Test 1: Manual Notification
 ```bash
@@ -128,29 +128,29 @@ curl http://localhost:8000/agents/status | jq '.agents'
 # Shows all 5 agents operational
 ```
 
-## 📊 Telegram Message Format
+## Telegram Message Format
 
 ### Manual Analysis Message
 ```
-🔍 Manual Analysis
+Manual Analysis
 Time: 2026-02-28 14:32:15
 
-📊 Analysis Summary:
+Analysis Summary:
 
-💾 Disk Usage:
+Disk Usage:
    • Total: 45.23 GB
    • File types: 512
    • Folders: 1024
 
-🐳 Docker:
+Docker:
    • Unused images: 5
    • Dangling volumes: 2
 
-📦 Package Caches:
+Package Caches:
    • npm: 523.4MB, pip: 234.5MB
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 AI Recommendations:
+AI Recommendations:
 
 [500 characters of recommendations...]
 
@@ -159,24 +159,24 @@ See frontend for full recommendations
 
 ### Scheduled Analysis Message
 ```
-📅 Scheduled Analysis
+Scheduled Analysis
 Time: 2026-02-29 09:00:00
 [Same format as above, marked as "Scheduled"]
 ```
 
-## 🔐 Security
+## Security
 
-✅ **All credentials stored in .env file**
+**All credentials stored in .env file**
 - Not in code
 - Not in logs (masked)
 - Sent only to Telegram HTTPS API
 
-✅ **Safe for production**
+**Safe for production**
 - Graceful error handling
 - Failed notifications don't crash service
 - Fallback recommendations if API down
 
-## 📋 API Endpoints
+## API Endpoints
 
 ### New/Updated Endpoints
 | Endpoint | Method | Returns |
@@ -188,7 +188,7 @@ Time: 2026-02-29 09:00:00
 | `/docker-analysis` | GET | Docker data only |
 | `/cache-analysis` | GET | Cache data only |
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### No Telegram Messages?
 - **Check configuration:** `curl http://localhost:8000/health | jq '.telegram_configured'`
@@ -211,7 +211,7 @@ Time: 2026-02-29 09:00:00
 - **Change:** `hour=9` to desired hour (0-23)
 - **Restart:** Backend picks up changes on reload
 
-## 📚 Documentation Files
+## Documentation Files
 
 1. **[TELEGRAM_SCHEDULER_GUIDE.md](TELEGRAM_SCHEDULER_GUIDE.md)** - Complete usage guide
 2. **[MULTI_AGENT_ARCHITECTURE.md](MULTI_AGENT_ARCHITECTURE.md)** - Agent system docs
@@ -219,7 +219,7 @@ Time: 2026-02-29 09:00:00
 4. **[telegram_service.py](telegram_service.py)** - Telegram/scheduler code
 5. **[agents.py](agents.py)** - Multi-agent system
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Verify Setup
 ```bash
@@ -242,37 +242,37 @@ curl http://localhost:8000/analyze
 ### 4. Monitor Logs
 ```bash
 # Backend logs show all scheduler activity
-# Look for: "✅ Scheduler initialized" and "📅 Running scheduled daily analysis"
+# Look for: "Scheduler initialized" and "Running scheduled daily analysis"
 ```
 
-## 📈 What Gets Analyzed (Daily at 9 AM)
+## What Gets Analyzed (Daily at 9 AM)
 
-✅ **Disk Usage**
+**Disk Usage**
 - File types and sizes
 - Folder hierarchy  
 - Total disk usage
 
-✅ **Docker Resources**
+**Docker Resources**
 - Unused images
 - Dangling volumes
 - Stopped containers
 
-✅ **Package Caches**
+**Package Caches**
 - npm cache size
 - pip cache size
 - git objects
 
-✅ **AI Recommendations**
+**AI Recommendations**
 - Cleanup suggestions
 - Priority by impact
 - Specific file paths
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Verify Telegram credentials are correct**
-   - Got bot token from @BotFather? ✅
-   - Got chat ID from @RawDataBot? ✅
-   - Added to .env? ✅
+   - Got bot token from @BotFather?
+   - Got chat ID from @RawDataBot?
+   - Added to .env?
 
 2. **Test the system**
    - Click "Analyze" in frontend
@@ -289,14 +289,14 @@ curl http://localhost:8000/analyze
    - Review recommendations
    - Implement cleanup suggestions
 
-## 🎉 Summary
+## Summary
 
 **Your DevClean is now:**
-- ✅ Running daily analysis at 9 AM UTC
-- ✅ Sending results to Telegram automatically
-- ✅ Notifying on manual analysis clicks
-- ✅ Generating AI-powered recommendations
-- ✅ Fully operational and production-ready
+- Running daily analysis at 9 AM UTC
+- Sending results to Telegram automatically
+- Notifying on manual analysis clicks
+- Generating AI-powered recommendations
+- Fully operational and production-ready
 
 **Three ways to get analysis:**
 1. **Automatic:** Every day at 9 AM → Telegram notification
@@ -306,7 +306,7 @@ curl http://localhost:8000/analyze
 ---
 
 **Installation Date:** 2026-02-28  
-**Status:** ✅ LIVE  
+**Status:** LIVE  
 **Next Run:** Tomorrow at 09:00 UTC  
 
-🚀 Your DevClean with Telegram scheduling is ready!
+Your DevClean with Telegram scheduling is ready!

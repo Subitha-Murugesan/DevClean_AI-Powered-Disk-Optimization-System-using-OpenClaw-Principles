@@ -4,11 +4,8 @@ DevClean is a full-stack application that analyzes disk usage and provides AI-po
 
 ## 🎯 Hackathon Quick Start
 
-### Get Your Free OpenRouter Credits
 1. Sign up at [openrouter.ai](https://openrouter.ai)
-2. Redeem your city's promo code at [openrouter.ai/redeem](https://openrouter.ai/redeem)
-3. Get $10 in free credits (expires March 1, 2026!)
-4. Copy your API key from the dashboard
+2. Copy your API key from the dashboard
 
 ### Setup (5 minutes)
 
