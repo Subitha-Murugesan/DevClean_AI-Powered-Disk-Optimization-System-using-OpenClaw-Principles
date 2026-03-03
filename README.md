@@ -245,14 +245,6 @@ TELEGRAM_CHAT_ID=your_chat_id
 **Comprehensive documentation** for all features
 **Production-ready** with error handling and logging
 
-## Team & Contribution
-
-**Solo Developer Project**
-- Full-stack implementation
-- Multi-agent system design
-- Telegram bot integration
-- AI prompt engineering
-- Frontend/backend development
 
 ## Links
 
@@ -275,5 +267,5 @@ The project showcases:
 
 
 **Built for OpenClaw Hackathon 2026** 
-**Category:** Developer Tools / System Utilities
-**Technologies:** Python, FastAPI, React, TypeScript, OpenRouter, Telegram Bot API, OpenClaw
+1. **Category:** Developer Tools / System Utilities
+2. **Technologies:** Python, FastAPI, React, TypeScript, OpenRouter, Telegram Bot API, OpenClaw
